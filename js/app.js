@@ -4126,6 +4126,11 @@
             window.selectedServiceTypes = [];
             updateServiceTypeDisplay();
             showView('screen-add-service');
+            const svcPickerField = document.getElementById('service-type-picker-field');
+            if (svcPickerField && !svcPickerField._pickerBound) {
+              svcPickerField._pickerBound = true;
+              svcPickerField.addEventListener('click', () => showServiceTypePicker());
+            }
             return;
           }
 
